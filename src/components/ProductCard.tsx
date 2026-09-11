@@ -7,7 +7,7 @@ export default function ProductCard({ product }: { product: ProductSummary }) {
 
   return (
     <Link href={`/produtos/${product.slug}`} className="group block">
-      <div className="aspect-[4/5] overflow-hidden bg-neutral-100">
+      <div className="aspect-[4/5] overflow-hidden rounded-lg bg-cream">
         {image && (
           <Image
             src={image.url}
@@ -19,8 +19,8 @@ export default function ProductCard({ product }: { product: ProductSummary }) {
         )}
       </div>
       <div className="mt-3 flex items-center justify-between text-sm">
-        <span className="font-medium">{product.name}</span>
-        <span className="text-black/60">{formatPriceCents(product.price_cents)}</span>
+        <span className="font-medium text-navy">{product.name}</span>
+        <span className="text-navy/60">{formatPriceCents(product.price_cents)}</span>
       </div>
     </Link>
   )

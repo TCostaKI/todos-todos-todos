@@ -38,25 +38,27 @@ export default async function ProductsPage({
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="mb-8 text-2xl font-semibold">Loja</h1>
+      <h1 className="mb-8 text-2xl font-semibold text-navy">Loja</h1>
 
       <div className="mb-10 flex flex-wrap gap-2">
         <Link
           href="/produtos"
-          className={`rounded-full border px-4 py-1.5 text-sm ${
-            !categoria ? "border-black bg-black text-white" : "border-black/20 hover:border-black/40"
+          className={`rounded-full border px-4 py-1.5 text-sm font-medium ${
+            !categoria
+              ? "border-navy bg-navy text-cream"
+              : "border-navy/20 text-navy hover:border-navy/40"
           }`}
         >
-          Todos
+          Ver tudo
         </Link>
         {categories.map((c) => (
           <Link
             key={c.id}
             href={`/produtos?categoria=${c.slug}`}
-            className={`rounded-full border px-4 py-1.5 text-sm ${
+            className={`rounded-full border px-4 py-1.5 text-sm font-medium ${
               categoria === c.slug
-                ? "border-black bg-black text-white"
-                : "border-black/20 hover:border-black/40"
+                ? "border-navy bg-navy text-cream"
+                : "border-navy/20 text-navy hover:border-navy/40"
             }`}
           >
             {c.name}
@@ -65,7 +67,7 @@ export default async function ProductsPage({
       </div>
 
       {products.length === 0 ? (
-        <p className="text-black/60">Nenhum produto encontrado.</p>
+        <p className="text-navy/60">Nenhum produto encontrado.</p>
       ) : (
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => (

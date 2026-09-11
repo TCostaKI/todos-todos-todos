@@ -14,7 +14,7 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="mx-auto max-w-2xl px-4 py-24 text-center text-black/60">
+      <div className="mx-auto max-w-2xl px-4 py-24 text-center text-navy/60">
         O teu carrinho está vazio.
       </div>
     )
@@ -46,53 +46,53 @@ export default function CheckoutPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <h1 className="mb-8 text-2xl font-semibold">Finalizar compra</h1>
+      <h1 className="mb-8 text-2xl font-semibold text-navy">Finalizar compra</h1>
 
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 text-navy sm:grid-cols-2">
         <input
           required
           name="fullName"
           placeholder="Nome completo"
-          className="col-span-2 rounded border border-black/20 px-4 py-2.5"
+          className="col-span-2 rounded border border-navy/20 px-4 py-2.5"
         />
         <input
           required
           type="email"
           name="email"
           placeholder="Email"
-          className="rounded border border-black/20 px-4 py-2.5"
+          className="rounded border border-navy/20 px-4 py-2.5"
         />
         <input
           required
           name="phone"
           placeholder="Telemóvel"
-          className="rounded border border-black/20 px-4 py-2.5"
+          className="rounded border border-navy/20 px-4 py-2.5"
         />
         <input
           required
           name="address"
           placeholder="Morada"
-          className="col-span-2 rounded border border-black/20 px-4 py-2.5"
+          className="col-span-2 rounded border border-navy/20 px-4 py-2.5"
         />
         <input
           required
           name="city"
           placeholder="Cidade"
-          className="rounded border border-black/20 px-4 py-2.5"
+          className="rounded border border-navy/20 px-4 py-2.5"
         />
         <input
           required
           name="postalCode"
           placeholder="Código postal"
-          className="rounded border border-black/20 px-4 py-2.5"
+          className="rounded border border-navy/20 px-4 py-2.5"
         />
 
-        <div className="col-span-2 mt-4 rounded border border-black/10 bg-neutral-50 p-4 text-sm text-black/60">
+        <div className="col-span-2 mt-4 rounded border border-navy/10 bg-cream p-4 text-sm text-navy/70">
           O pagamento será combinado após confirmarmos a tua encomenda. Vamos
           integrar pagamento online (ex: Stripe/MB Way) em breve.
         </div>
 
-        <div className="col-span-2 flex items-center justify-between border-t border-black/10 pt-4">
+        <div className="col-span-2 flex items-center justify-between border-t border-navy/10 pt-4">
           <span className="font-medium">Total</span>
           <span className="font-medium">{formatPriceCents(totalCents)}</span>
         </div>
@@ -102,7 +102,7 @@ export default function CheckoutPage() {
         <button
           type="submit"
           disabled={submitting}
-          className="col-span-2 mt-2 rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/80 disabled:opacity-50"
+          className="col-span-2 mt-2 rounded-full bg-orange px-6 py-3 text-sm font-semibold text-navy-dark hover:brightness-95 disabled:opacity-50"
         >
           {submitting ? "A processar..." : "Confirmar encomenda"}
         </button>

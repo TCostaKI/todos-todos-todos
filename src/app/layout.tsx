@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/cart-context";
 import Header from "@/components/Header";
@@ -10,23 +10,25 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const baloo = Baloo_2({
+  variable: "--font-baloo",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Todos Todos Todos",
-  description: "Loja online Todos Todos Todos",
+  title: "Todos Todos Todos — Veste a tua humanidade",
+  description:
+    "Todos Todos Todos é uma marca que veste a causa da inclusão, da dignidade humana e do bem comum.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${baloo.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-black">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         <CartProvider>
           <Header />
           <main className="flex-1">{children}</main>

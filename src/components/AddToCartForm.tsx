@@ -50,7 +50,7 @@ export default function AddToCartForm({
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <label className="mb-2 block text-sm font-medium">Tamanho</label>
+        <label className="mb-2 block text-sm font-medium text-navy">Tamanho</label>
         <div className="flex flex-wrap gap-2">
           {variants.map((v) => (
             <button
@@ -60,8 +60,8 @@ export default function AddToCartForm({
               onClick={() => setVariantId(v.id)}
               className={`rounded-full border px-4 py-1.5 text-sm disabled:cursor-not-allowed disabled:opacity-40 ${
                 variantId === v.id
-                  ? "border-black bg-black text-white"
-                  : "border-black/20 hover:border-black/40"
+                  ? "border-navy bg-navy text-cream"
+                  : "border-navy/20 text-navy hover:border-navy/40"
               }`}
             >
               {v.size}
@@ -74,7 +74,7 @@ export default function AddToCartForm({
         type="button"
         onClick={handleAdd}
         disabled={outOfStock}
-        className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-40"
+        className="rounded-full bg-orange px-6 py-3 text-sm font-semibold text-navy-dark hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-40"
       >
         {outOfStock ? "Esgotado" : added ? "Adicionado ✓" : "Adicionar ao carrinho"}
       </button>
@@ -83,7 +83,7 @@ export default function AddToCartForm({
         <button
           type="button"
           onClick={() => router.push("/carrinho")}
-          className="text-sm underline underline-offset-4 hover:opacity-70"
+          className="text-sm text-navy underline underline-offset-4 hover:opacity-70"
         >
           Ver carrinho
         </button>

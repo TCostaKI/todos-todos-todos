@@ -28,34 +28,39 @@ export default async function ProductPage({
 
   if (!product) notFound()
 
-  const image = product.product_images[0]
+  const images = [...product.product_images].sort((a, b) => a.position - b.position)
+  const image = images[0]
   const variants = [...product.product_variants].sort((a, b) =>
     a.size.localeCompare(b.size)
   )
 
   return (
     <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 py-12 md:grid-cols-2">
-      <div className="aspect-[4/5] overflow-hidden bg-neutral-100">
-        {image && (
-          <Image
-            src={image.url}
-            alt={image.alt ?? product.name}
-            width={800}
-            height={1000}
-            className="h-full w-full object-cover"
-            priority
-          />
-        )}
+      <div
+        className={`grid gap-3 ${images.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}
+      >
+        {images.map((img) => (
+          <div key={img.id} className="aspect-[4/5] overflow-hidden rounded-lg bg-cream">
+            <Image
+              src={img.url}
+              alt={img.alt ?? product.name}
+              width={800}
+              height={1000}
+              className="h-full w-full object-cover"
+              priority
+            />
+          </div>
+        ))}
       </div>
 
       <div>
         {product.categories && (
-          <p className="mb-2 text-sm text-black/50">{product.categories.name}</p>
+          <p className="mb-2 text-sm text-navy/50">{product.categories.name}</p>
         )}
-        <h1 className="text-2xl font-semibold">{product.name}</h1>
-        <p className="mt-2 text-lg">{formatPriceCents(product.price_cents)}</p>
+        <h1 className="text-2xl font-semibold text-navy">{product.name}</h1>
+        <p className="mt-2 text-lg text-navy">{formatPriceCents(product.price_cents)}</p>
         {product.description && (
-          <p className="mt-6 text-black/70">{product.description}</p>
+          <p className="mt-6 text-navy/70">{product.description}</p>
         )}
 
         <div className="mt-8">
