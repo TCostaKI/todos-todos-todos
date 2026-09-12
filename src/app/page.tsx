@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { supabase } from "@/lib/supabase"
 import ProductCard from "@/components/ProductCard"
-import Logo from "@/components/Logo"
 import type { ProductSummary } from "@/lib/types"
 
 async function getFeaturedProducts(): Promise<ProductSummary[]> {
@@ -29,7 +28,7 @@ export default async function Home() {
           alt="Todos Todos Todos — comunidade ao pôr do sol"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/40 to-transparent" />
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-4 px-4 pb-14 pt-32 text-cream">
@@ -73,10 +72,10 @@ export default async function Home() {
               </span>
             </div>
           </div>
-          <div className="relative mx-auto aspect-[6/5] w-full max-w-md">
+          <div className="relative mx-auto aspect-[543/385] w-full max-w-lg">
             <Image
               src="/brand/crowd-illustration.png"
-              alt="Veste a tua humanidade — ilustração"
+              alt="Ilustração de um grupo de pessoas diversas"
               fill
               className="object-contain"
             />
@@ -100,12 +99,21 @@ export default async function Home() {
       </section>
 
       {/* Movement statement */}
-      <section className="flex flex-col items-center gap-6 bg-navy px-4 py-20 text-center">
-        <Logo variant="white" height={130} />
-        <p className="max-w-md text-cream/80">
-          TODOS não é só uma palavra. TODOS é uma escolha. TODOS é um futuro
-          possível.
-        </p>
+      <section className="bg-mustard/25 px-4 py-16">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+          <div className="relative aspect-[780/1175] w-full max-w-xs overflow-hidden rounded-2xl shadow-sm">
+            <Image
+              src="/brand/crowd-mosaic.jpg"
+              alt="Todos — ilustração de uma multidão diversa"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <p className="max-w-md text-navy/80">
+            TODOS não é só uma palavra. TODOS é uma escolha. TODOS é um futuro
+            possível.
+          </p>
+        </div>
       </section>
 
       {/* Closing quote */}
