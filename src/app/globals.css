@@ -11,6 +11,15 @@
   --color-orange-ink: #b06a1a;
   --color-purple: #875898;
   --color-blue: #3d82bc;
+
+  /* pastel palette, lifted from the crowd illustration */
+  --color-peach: #f6c9b8;
+  --color-peach-deep: #e8977c;
+  --color-mustard: #f0cf94;
+  --color-lavender: #ddc6e8;
+  --color-lavender-deep: #a175b4;
+  --color-mist: #c7dde0;
+  --color-mist-deep: #4f7f8a;
 }
 
 @theme inline {
@@ -23,6 +32,13 @@
   --color-orange-ink: var(--color-orange-ink);
   --color-purple: var(--color-purple);
   --color-blue: var(--color-blue);
+  --color-peach: var(--color-peach);
+  --color-peach-deep: var(--color-peach-deep);
+  --color-mustard: var(--color-mustard);
+  --color-lavender: var(--color-lavender);
+  --color-lavender-deep: var(--color-lavender-deep);
+  --color-mist: var(--color-mist);
+  --color-mist-deep: var(--color-mist-deep);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-logo: var(--font-baloo);

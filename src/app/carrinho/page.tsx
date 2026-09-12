@@ -29,7 +29,7 @@ export default function CartPage() {
       <ul className="divide-y divide-navy/10">
         {items.map((item) => (
           <li key={item.variantId} className="flex gap-4 py-6">
-            <div className="h-24 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-cream">
+            <div className="h-24 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-peach/30">
               {item.imageUrl && (
                 <Image
                   src={item.imageUrl}

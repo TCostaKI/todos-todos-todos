@@ -40,7 +40,7 @@ export default async function ProductPage({
         className={`grid gap-3 ${images.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}
       >
         {images.map((img) => (
-          <div key={img.id} className="aspect-[4/5] overflow-hidden rounded-lg bg-cream">
+          <div key={img.id} className="aspect-[4/5] overflow-hidden rounded-lg bg-peach/30">
             <Image
               src={img.url}
               alt={img.alt ?? product.name}

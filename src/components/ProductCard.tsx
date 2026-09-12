@@ -7,7 +7,7 @@ export default function ProductCard({ product }: { product: ProductSummary }) {
 
   return (
     <Link href={`/produtos/${product.slug}`} className="group block">
-      <div className="aspect-[4/5] overflow-hidden rounded-lg bg-cream">
+      <div className="aspect-[4/5] overflow-hidden rounded-lg bg-peach/30">
         {image && (
           <Image
             src={image.url}

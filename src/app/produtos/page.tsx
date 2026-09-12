@@ -36,6 +36,8 @@ export default async function ProductsPage({
     getProducts(categoria),
   ])
 
+  const pastelTints = ["bg-peach/40", "bg-mustard/40", "bg-lavender/40", "bg-mist/40"]
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="mb-8 text-2xl font-semibold text-navy">Loja</h1>
@@ -46,19 +48,19 @@ export default async function ProductsPage({
           className={`rounded-full border px-4 py-1.5 text-sm font-medium ${
             !categoria
               ? "border-navy bg-navy text-cream"
-              : "border-navy/20 text-navy hover:border-navy/40"
+              : "border-transparent bg-navy/5 text-navy hover:bg-navy/10"
           }`}
         >
           Ver tudo
         </Link>
-        {categories.map((c) => (
+        {categories.map((c, i) => (
           <Link
             key={c.id}
             href={`/produtos?categoria=${c.slug}`}
             className={`rounded-full border px-4 py-1.5 text-sm font-medium ${
               categoria === c.slug
                 ? "border-navy bg-navy text-cream"
-                : "border-navy/20 text-navy hover:border-navy/40"
+                : `border-transparent text-navy hover:brightness-95 ${pastelTints[i % pastelTints.length]}`
             }`}
           >
             {c.name}

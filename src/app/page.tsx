@@ -22,34 +22,69 @@ export default async function Home() {
 
   return (
     <div>
-      <section className="overflow-hidden border-b border-navy/10 bg-navy text-cream">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
-          <div className="flex flex-col items-start gap-6">
-            <Logo variant="white" height={90} />
-            <p className="max-w-md text-lg text-cream/80">
-              Não aceitamos um mundo de exclusão. Acreditamos num caminho onde
-              cabem todos os rostos, todas as cores, todas as histórias.
+      {/* Hero */}
+      <section className="relative flex min-h-[560px] items-end overflow-hidden">
+        <Image
+          src="/brand/hero-crowd.jpg"
+          alt="Todos Todos Todos — comunidade ao pôr do sol"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/40 to-transparent" />
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-4 px-4 pb-14 pt-32 text-cream">
+          <p className="font-logo text-3xl text-orange sm:text-4xl">
+            Veste a tua humanidade.
+          </p>
+          <p className="max-w-md text-cream/85">
+            Não aceitamos um mundo de exclusão. Acreditamos num caminho onde
+            cabem todos os rostos, todas as cores, todas as histórias.
+          </p>
+          <Link
+            href="/produtos"
+            className="mt-2 rounded-full bg-orange px-6 py-3 text-sm font-semibold text-navy-dark hover:brightness-95"
+          >
+            Ver coleção
+          </Link>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="bg-lavender/40 py-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 md:grid-cols-2">
+          <div>
+            <p className="font-logo text-3xl text-navy">
+              Mais do que uma marca, um movimento.
             </p>
-            <p className="font-logo text-2xl text-orange">Veste a tua humanidade.</p>
-            <Link
-              href="/produtos"
-              className="rounded-full bg-orange px-6 py-3 text-sm font-semibold text-navy-dark hover:brightness-95"
-            >
-              Ver coleção
-            </Link>
+            <p className="mt-4 text-navy/70">
+              A nossa missão é promover a cultura da inclusão universal
+              através de produtos, campanhas e experiências que inspirem,
+              eduquem e mobilizem.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="rounded-full bg-peach px-4 py-1.5 text-sm font-medium text-navy">
+                Inclusão
+              </span>
+              <span className="rounded-full bg-mustard px-4 py-1.5 text-sm font-medium text-navy">
+                Dignidade humana
+              </span>
+              <span className="rounded-full bg-mist px-4 py-1.5 text-sm font-medium text-navy">
+                Bem comum
+              </span>
+            </div>
           </div>
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+          <div className="relative mx-auto aspect-[6/5] w-full max-w-md">
             <Image
-              src="/brand/hero-sunset.jpg"
-              alt="Todos Todos Todos — pôr do sol"
+              src="/brand/crowd-illustration.png"
+              alt="Veste a tua humanidade — ilustração"
               fill
-              className="object-cover"
-              priority
+              className="object-contain"
             />
           </div>
         </div>
       </section>
 
+      {/* Products */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="mb-8 flex items-center justify-between">
           <h2 className="text-xl font-semibold text-navy">Novidades</h2>
@@ -64,16 +99,27 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="border-t border-navy/10 bg-cream py-16">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <p className="font-logo text-3xl text-navy">
-            Mais do que uma marca, um movimento.
-          </p>
-          <p className="mt-4 text-navy/70">
-            TODOS não é só uma palavra. TODOS é uma escolha. TODOS é um futuro
-            possível.
-          </p>
-        </div>
+      {/* Movement statement */}
+      <section className="flex flex-col items-center gap-6 bg-navy px-4 py-20 text-center">
+        <Logo variant="white" height={130} />
+        <p className="max-w-md text-cream/80">
+          TODOS não é só uma palavra. TODOS é uma escolha. TODOS é um futuro
+          possível.
+        </p>
+      </section>
+
+      {/* Closing quote */}
+      <section className="relative flex min-h-[380px] items-center justify-center overflow-hidden">
+        <Image
+          src="/brand/hero-sunset.jpg"
+          alt="Todos Todos Todos — pôr do sol"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-navy-dark/45" />
+        <p className="relative max-w-lg px-4 text-center font-logo text-2xl text-cream sm:text-3xl">
+          &ldquo;TODOS TODOS TODOS&rdquo; — veste a tua humanidade.
+        </p>
       </section>
     </div>
   )
