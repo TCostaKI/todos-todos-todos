@@ -232,18 +232,21 @@ export type Database = {
           full_name: string | null
           id: string
           phone: string | null
+          role: string
         }
         Insert: {
           created_at?: string
           full_name?: string | null
           id: string
           phone?: string | null
+          role?: string
         }
         Update: {
           created_at?: string
           full_name?: string | null
           id?: string
           phone?: string | null
+          role?: string
         }
         Relationships: []
       }
@@ -252,7 +255,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never

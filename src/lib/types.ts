@@ -4,6 +4,30 @@ export type Category = Tables<"categories">
 export type Product = Tables<"products">
 export type ProductImage = Tables<"product_images">
 export type ProductVariant = Tables<"product_variants">
+export type Order = Tables<"orders">
+export type OrderItem = Tables<"order_items">
+
+export type OrderWithItems = Order & {
+  order_items: OrderItem[]
+}
+
+export const ORDER_STATUSES = [
+  "pending",
+  "paid",
+  "shipped",
+  "completed",
+  "cancelled",
+] as const
+
+export type OrderStatus = (typeof ORDER_STATUSES)[number]
+
+export const ORDER_STATUS_LABELS: Record<OrderStatus, string> = {
+  pending: "Pendente",
+  paid: "Pago",
+  shipped: "Enviado",
+  completed: "Concluído",
+  cancelled: "Cancelado",
+}
 
 export type ProductWithDetails = Product & {
   product_images: ProductImage[]
